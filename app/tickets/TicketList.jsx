@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import { resolve } from "styled-jsx/css";
 
 async function getTickets() {
+  // imitate delay
+  await new Promise(resolve => setTimeout(resolve, 3000)) // this is just a 3 second delay to excute below code. basicaly we try to late 3 second to fetch data.
+
   const res = await fetch("http://localhost:4000/tickets", {
     next: {
       revalidate: 0, // when we add 0 second here then nextjs alwaays request and get data from db without using cache data. if you use any time frame(Ex: 30 s) then nextjs always give firstly rendered data(using cache memory) and after every 30 second nextjs request to db and getting the data
