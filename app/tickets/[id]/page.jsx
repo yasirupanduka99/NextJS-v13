@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 
 async function getTicket(id) {
   // imitate delay
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // this is just a 3 second delay to excute below code. basicaly we try to late 3 second to fetch data.
+  // await new Promise((resolve) => setTimeout(resolve, 3000)); // this is just a 3 second delay to excute below code. basicaly we try to late 3 second to fetch data.
 
   const res = await fetch(`http://localhost:4000/tickets/${id}`, {
     next: {
