@@ -41,6 +41,20 @@
       "body": "The pineapple[2][3] (Ananas comosus) is a tropical plant with an edible fruit; it is the most economically significant plant in the family Bromeliaceae.[4]\n\nThe pineapple is indigenous to South America, where it has been cultivated for many centuries. The introduction of the pineapple plant to Europe in the 17th century made it a significant cultural icon of luxury. Since the 1820s, pineapple has been commercially grown in greenhouses and many tropical plantations.",
       "priority": "high",
       "user_email": "mario@netninja.dev"
+    },
+    {
+      "id": "e1ab",
+      "title": "Mangosteen",
+      "body": "Mangosteen, also known as the purple mangosteen, is a tropical evergreen tree with edible fruit native to Island Southeast Asia, from the Malay Peninsula to Borneo. It has been cultivated extensively in tropical Asia since ancient times.",
+      "priority": "high",
+      "user_email": "mario@netninja.dev"
+    },
+    {
+      "id": "4d82",
+      "title": "Coconut",
+      "body": "The coconut tree is a member of the palm tree family and the only living species of the genus Cocos. The term \"coconut\" can refer to the whole coconut palm, the seed, or the fruit, which botanically is a drupe, not a nut. They are ubiquitous in coastal tropical regions and are a cultural icon of the tropics.",
+      "priority": "medium",
+      "user_email": "mario@netninja.dev"
     }
   ]
 }
