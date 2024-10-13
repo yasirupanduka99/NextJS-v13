@@ -1,4 +1,19 @@
+import { PageNotFoundError } from "next/dist/shared/lib/utils";
+import { notFound } from "next/navigation";
 import React from "react";
+
+export const dynamicParams = true; // this 'true' is default state. This is a feature in Next.js that, when set to true, tells Next.js that dynamic routes are allowed for this page. This means that dynamic URL parameters (like id in this case) can be fetched at runtime. If this were false, the route would only be pre-generated during the build phase, with static paths generated ahead of time.
+
+export async function generateStaticParams() {
+  // This function generates static paths for dynamic routes during the build phase.
+  const res = await fetch("http://localhost:4000/tickets");
+
+  const tickets = await res.json();
+
+  return tickets.map((ticket) => ({
+    id: ticket.id, // Each object contains a ticket ID. During the build phase, Next.js calls generateStaticParams() and gets: [{ id: '1' }, { id: '2' }, ... ]. Next.js uses these IDs to pre-generate pages for the following URLs: /tickets/1, /tickets/2
+  }));
+}
 
 async function getTicket(id) {
   const res = await fetch(`http://localhost:4000/tickets/${id}`, {
@@ -6,6 +21,11 @@ async function getTicket(id) {
       revalidate: 60,
     },
   });
+
+  if (!res.ok){
+    notFound();
+  }
+
   const data = await res.json();
 
   return data;
